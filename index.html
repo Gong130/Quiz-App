@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>网页测验小项目 · Quiz Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- defer 确保 DOM 构建完成后再执行脚本 -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- 起始页 -->
+  <section id="start-screen" class="screen active">
+    <div class="card">
+      <h1>欢迎参加知识小测验！</h1>
+      <p class="sub">共 <span id="total-questions">0</span> 题，准备好就开始吧～</p>
+      <button id="start-btn" class="btn primary">开始测验</button>
+    </div>
+  </section>
+
+  <!-- 题目页 -->
+  <section id="quiz-screen" class="screen">
+    <div class="card">
+      <div class="topbar">
+        <div>题目：<span id="current-question">1</span>/<span id="total-questions-dup">0</span></div>
+        <div>得分：<span id="score">0</span></div>
+      </div>
+
+      <div class="progress-bar" aria-label="进度">
+        <div id="progress"></div>
+      </div>
+
+      <h2 id="question-text" class="question">题目文本</h2>
+      <div id="answers-container" class="answers" role="group" aria-label="备选答案">
+        <!-- 动态插入按钮 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 结果页 -->
+  <section id="result-screen" class="screen">
+    <div class="card">
+      <h2>测验结束！</h2>
+      <p>你的得分是：<strong><span id="final-score">0</span>/<span id="max-score">0</span></strong></p>
+      <p id="result-message" class="sub"></p>
+      <button id="restart-btn" class="btn">重新开始</button>
+    </div>
+  </section>
+</body>
+</html>
